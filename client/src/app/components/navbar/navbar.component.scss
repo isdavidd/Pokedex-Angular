@@ -1,3 +1,16 @@
-.example-spacer {
-    flex: 1 1 auto;
+mat-toolbar {
+    background-color: rgba($color: #e90f0f, $alpha: 1.0)!important;
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.spacer { flex: 1 1 auto; }
+
+img { height: 90%; }
+
+mat-icon {  
+    font-size: 35px;
+    height: 35px;
+    width: 35px;
 }

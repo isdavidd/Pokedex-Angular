@@ -1,5 +1,21 @@
-<mat-toolbar color="primary">
-    <span>Pokedex</span>
-    <span class="example-spacer"></span>
-    <span>Pokedex</span>
+<mat-toolbar>
+    <img src="../../../assets/Poké_Ball_icon.svg.png" class="img-fluid">
+    <span class="ms-3 spacer">PokeCria</span>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Number</mat-label>
+          <input type="text"
+                 placeholder="Pick one"
+                 aria-label="Number"
+                 matInput
+                 [formControl]="myControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    <mat-icon>account_circle</mat-icon>
 </mat-toolbar>
