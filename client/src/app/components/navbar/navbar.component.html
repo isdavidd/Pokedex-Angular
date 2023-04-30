@@ -1,12 +1,18 @@
 <mat-toolbar>
   <img src="../../../assets/Poké_Ball_icon.svg.png" class="img-fluid" />
 
-  <span class="ms-3 spacer">PokeCria</span>
-  
-  <div class="spacer" [formGroup]="search">
-    <mat-icon>search</mat-icon>
-    <input class="search" type="text" placeholder="Search" aria-label="Number" matInput formControlName="selection">
+  <span class="ms-2 me-3">PokeCria</span>
+
+  <div class="container mx-5" style="width: fit-content; vertical-align: middle;">
+    <mat-icon style="height: 28px; font-size: 28px; height: 28px; width: 28px;">info</mat-icon>
+    <span class="ms-1 me-2">About</span>
+    <span>Contact</span>
   </div>
   
+  <div class="container" [formGroup]="search" id="searchBar">
+    <mat-icon>search</mat-icon>
+    <input class="search" type="text" placeholder="Search Pokemon" aria-label="Number" matInput formControlName="selection">
+  </div>
+
   <mat-icon>account_circle</mat-icon>
 </mat-toolbar>

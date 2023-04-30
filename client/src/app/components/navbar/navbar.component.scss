@@ -5,14 +5,20 @@ mat-toolbar {
     justify-content: flex-start;
 }
 
+
+#searchBar { margin-left: 200px; width: fit-content;}
 .search { 
     border-radius: 10px; 
     border-width: 1px; 
     border-style:solid;
     height: 40px;
     width: 260px;
-    padding-left: 10px;
+    padding-left: 10px;    
 }
+
+input[type=text]:focus {
+    outline: none;
+  }
 
 img { height: 90%; }
 
