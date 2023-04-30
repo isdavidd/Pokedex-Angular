@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
@@ -10,12 +10,20 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  myControl = new FormControl('');
+
+  search: FormGroup;
+
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
 
+  constructor(private builder: FormBuilder) {
+    this.search = builder.group({
+      selection: [null]
+    })
+  }
+
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOptions = this.search.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value || ''))
     );
