@@ -10,7 +10,7 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-
+  userName: string = "Veliok";
   search: FormGroup;
 
   options: string[] = ['One', 'Two', 'Three'];
