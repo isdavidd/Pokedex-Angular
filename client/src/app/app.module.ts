@@ -16,12 +16,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
