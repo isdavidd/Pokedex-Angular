@@ -10,6 +10,7 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  public isCollapsed = true;
   userName: string = "Veliok";
   search: FormGroup;
 
