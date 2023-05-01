@@ -1,16 +1,10 @@
+/* Styles for the hamburguer menu */
 .navbar-toggler { border-color: #fff; color:#fff }
 
 .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
 
-mat-icon {  
-    color:#fff;
-    font-size: 32px;
-    height: 32px;
-    width: 32px;
-    vertical-align: middle;
-}
 
-
+/* Styles for the navbar´s items (buttons and the input field) */
 .navbarButton { 
     color: #fff;
     opacity: 0.7;
@@ -20,14 +14,61 @@ mat-icon {
     border: none;
 }
 
+mat-icon {  
+    color:#fff;
+    font-size: 32px;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+}
+
 .navbarButton:hover { opacity: 1 }
 
-form {
-    margin-left: 7%;
-}
+form { margin-right: 12%;}
 
-form > input {
+input {
+    height: 45px;
     width: 25vw;
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    opacity: 0.7;
+    transition: 0.6s;
+    border-radius: 4px;
+    background-color: #fa7070;
+    border: none;
 }
 
-span:nth-child(3) { color: #fff; font-weight: 500; margin-left: auto;}
+div > span { color: #fff; font-weight: 500;}
+
+/* Stylization for the magnifying glass icon in input placeholder */
+input::-webkit-input-placeholder { 
+    font-family: FontAwesome;
+    font-size: 20px;
+    padding-left: 8px;
+    font-weight: normal;
+    vertical-align: middle;
+    display: inline-block !important;
+    color: hsl(0, 0%, 100%);
+    }
+    
+    input::-moz-placeholder  { 
+    font-family: FontAwesome;
+    font-size: 20px;
+    padding-left: 8px;
+    font-weight: normal;
+    vertical-align: top;
+    display: inline-block !important;
+    color: hsl(0, 0%, 100%);
+    }
+    
+    input:-ms-input-placeholder  { 
+    font-family: FontAwesome;
+    font-size: 20px;
+    padding-left: 8px;
+    font-weight: normal;
+    vertical-align: top;
+    display: inline-block !important;
+    color: hsl(0, 0%, 99%);
+    }

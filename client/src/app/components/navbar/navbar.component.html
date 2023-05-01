@@ -1,11 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img width="60" src="../../../assets/Poké_Ball_icon.svg.png" alt="" />
-      <span class="ms-2 font-weight-bold" style="color: #fff">PokeCria</span>
-    </a>
     <button
-      class="navbar-toggler"
+      class="navbar-toggler ms-1"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarContent"
@@ -16,42 +12,53 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse" id="navbarContent" [ngbCollapse]="isCollapsed">
-      <ul class="navbar-nav">
-        <li class="nav-item ms-5">
+    <a class="navbar-brand" href="#">
+      <img width="60" src="../../../assets/Poké_Ball_icon.svg.png" alt="" />
+      <span class="ms-2 me-3 font-weight-bold" style="color: #fff"
+        >PokeCria</span
+      >
+    </a>
+    <div
+      class="navbar-collapse collapse justify-content-end"
+      id="navbarContent"
+      [ngbCollapse]="isCollapsed"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ms-1 me-3">
           <a class="nav-link" href="#">
             <button class="btn navbarButton">
               <mat-icon>info</mat-icon>
-              <span class="ms-1">About</span>
+              <span class="ms-2">About</span>
             </button>
           </a>
         </li>
-        <li class="nav-item ms-4">
+        <li class="nav-item ms-1">
           <a class="nav-link" href="#">
             <button class="btn navbarButton">
               <mat-icon>contacts</mat-icon>
-              <span class="ms-1">Contacts</span>
+              <span class="ms-2">Contacts</span>
             </button>
           </a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
+      <form class="nav-item d-flex ms-1 mb-2" role="search">
         <input
           class="form-control me-2"
           type="search"
-          placeholder="Pokemon Name"
+          placeholder="&#61442; Seach Pokemon"
           aria-label="Search"
         />
-        <button class="btn navbarButton" type="submit">
+        <!-- <button class="btn navbarButton" type="submit">
           <mat-icon>search</mat-icon>
           Search
-        </button>
+        </button> -->
       </form>
+      <div class="nav-item d-inline-flex ms-2">
         <span class="navbar-text me-1">
-          {{userName}}
+          {{ userName }}
         </span>
         <mat-icon>account_circle</mat-icon>
+      </div>
     </div>
   </div>
 </nav>
-
