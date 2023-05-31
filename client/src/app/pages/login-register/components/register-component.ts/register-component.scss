@@ -1,0 +1,74 @@
+.register-screen {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.register-screen > div {
+    overflow: auto;
+    width: 700px;
+    height: 70%;
+    border-radius: 20px;
+    background-color: #fa7070;
+}
+
+// Stylization for register inputs 
+
+form > div {
+    display: flex;
+    justify-content: center;
+}
+
+div > input {
+    width: 350px;
+}
+
+#userNameInput {
+    background-image: url('../../../../../assets/icons8-user-30.png');
+    background-repeat: no-repeat;
+    background-size: 38px;
+    background-position: 5px;
+    padding-left: 50px;
+}
+
+#emailInput {
+    background-image: url('../../../../../assets/icons8-email-50.png');
+    background-repeat: no-repeat;
+    background-size: 32px;
+    background-position: 10px;
+    padding-left: 55px;
+}
+
+#passwordInput {
+    background-image: url('../../../../../assets/icons8-password-30.png');
+    background-repeat: no-repeat;
+    background-size: 38px;
+    background-position: 5px;
+    padding-left: 50px;
+}
+
+input::placeholder {
+    color: #000000d8;
+}
+
+// Styliziation of the <a> tags
+
+div > a, p > a {
+    color: #000000d8;
+    text-decoration: none;
+}
+
+div > a:hover, p > a:hover {
+    text-decoration: underline;
+}
+
+// Stylizarion of the "Register" button
+
+div > .btn {
+    width: 350px;
+    font-weight: 500;
+}

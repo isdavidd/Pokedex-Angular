@@ -41,8 +41,10 @@ $Pokedex-Angular-theme: mat.define-light-theme((
 /* Importing icons */
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
-html, body { height: 100%; }
+html, body { height: 100%; background-color: #2b292c;}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .spacer { flex: 1 1 auto; }
+
 

@@ -1,0 +1,64 @@
+.login-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.login-screen > div {
+    width: 700px;
+    height: 70%;
+    border-radius: 20px;
+    background-color: #fa7070;
+}
+
+// Stylization for login inputs 
+
+form > div {
+    display: flex;
+    justify-content: center;
+}
+
+div > input {
+    width: 350px;
+}
+
+#emailInput {
+    background-image: url('../../../../../assets/icons8-email-50.png');
+    background-repeat: no-repeat;
+    background-size: 32px;
+    background-position: 10px;
+    padding-left: 55px;
+}
+
+#passwordInput {
+    background-image: url('../../../../../assets/icons8-password-30.png');
+    background-repeat: no-repeat;
+    background-size: 38px;
+    background-position: 5px;
+    padding-left: 50px;
+}
+
+input::placeholder {
+    color: #000000d8;
+}
+
+// Styliziation of the <a> tags
+
+div > a, p > a {
+    color: #000000d8;
+    text-decoration: none;
+}
+
+div > a:hover, p > a:hover {
+    text-decoration: underline;
+}
+
+// Stylizarion of the "Login" button
+
+div > .btn {
+    width: 350px;
+    font-weight: 500;
+}
