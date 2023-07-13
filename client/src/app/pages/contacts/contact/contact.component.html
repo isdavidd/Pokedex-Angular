@@ -1,0 +1,71 @@
+<div class="container row pe-0" style="margin-top: 150px;">
+    <div class="col-12-sm p-0">
+      <img
+        [src]="cria.photo"
+        class="rounded-circle img-fluid float-start me-3"
+        style="width: 25vw"
+      />
+      <h2 class="pt-2">{{cria.name}}</h2>
+      <div class="text-container">
+        <p>
+          {{cria.description}}
+        </p>
+      </div>
+      <div class="col-6-sm">
+        <fa-icon
+          [icon]="faGithub"
+          class="icon"
+          size="2x"
+          [animation]="githubAnimationValue"
+          title="githubIcon"     
+          #githubIcon
+        >
+        </fa-icon>
+        <a
+          [href]='cria.githubLink'
+          (mouseenter)="onMouseEnter(githubIcon, 'github')"
+          (mouseleave)="onMouseLeave(githubIcon, 'github')"
+          target="_blank"
+          class="me-3"
+        >
+          {{cria.githubLink.slice(8)}}</a
+        >
+      </div>
+      <div class="col-6-sm mt-2">
+        <fa-icon
+          [icon]="faLinkedin"
+          class="icon"
+          size="2x"
+          [animation]="linkedinAnimationValue"
+          #linkedinIcon
+        >
+        </fa-icon>
+        <a
+          [href]='cria.linkedInLink'
+          (mouseenter)="onMouseEnter(linkedinIcon, 'linkedin')"
+          (mouseleave)="onMouseLeave(linkedinIcon, 'linkedin')"
+          target="_blank"
+        >
+          {{cria.linkedInLink.slice(8)}}
+        </a>
+      </div>
+      <div class="col-6-sm mt-2">
+        <fa-icon
+          [icon]="faEnvelope"
+          class="icon"
+          size="2x"
+          [animation]="emailAnimationValue"
+          #emailIcon
+        >
+        </fa-icon>
+        <a
+          href="#"
+          (mouseenter)="onMouseEnter(emailIcon, 'email')"
+          (mouseleave)="onMouseLeave(emailIcon, 'email')"
+          target="_blank"
+        >
+        {{cria.email}}
+        </a>
+      </div>
+    </div>
+  </div>

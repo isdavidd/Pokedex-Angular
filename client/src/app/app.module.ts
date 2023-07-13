@@ -9,15 +9,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
 
+
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './pages/home/navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginAndRegisterComponent } from './pages/login-register/login-register.component';
 import { LoginComponent } from './pages/login-register/components/login-component.ts/login-component';
 import { RegisterComponent } from './pages/login-register/components/register-component.ts/register-component';
-import { ContactsComponent } from './pages/contacts/contacts/contacts.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ContactComponent } from './pages/contacts/contact/contact.component';
 
 
 
@@ -29,7 +32,8 @@ import { ContactsComponent } from './pages/contacts/contacts/contacts.component'
     LoginAndRegisterComponent,
     LoginComponent,
     RegisterComponent,
-    ContactsComponent
+    ContactsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +47,12 @@ import { ContactsComponent } from './pages/contacts/contacts/contacts.component'
     MatFormFieldModule,
     ReactiveFormsModule,
     MatSelectModule,
+    FontAwesomeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+  }
+}
