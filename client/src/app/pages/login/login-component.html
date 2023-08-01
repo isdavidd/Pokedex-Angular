@@ -1,0 +1,65 @@
+<div class="container-fluid login-screen">
+    <div class="container">
+        <div class="row" style="justify-content: center;">
+            <img class="col-12-sm img-fluid mt-2" src="../../../../../assets/Poke_Ball_icon.png" style="width: 35%;"/>
+            <form (ngSubmit)="onSubmit()" #loginSubmit="ngForm" ngNativeValidate>
+                <div class="col-12-sm mt-5 form-group">
+                    <input 
+                    type="email" 
+                    class="form-control form-control-lg" 
+                    id="emailInput" 
+                    placeholder="Email"
+                    required
+                    ngModel 
+                    name="email"
+                    [email]="true"
+                    >
+                </div>
+                <div class="col-12-sm mt-5 form-group">
+                    <input 
+                    [type]="showPassword?'text':'password'"
+                    class="form-control form-control-lg" 
+                    id="passwordInput" 
+                    placeholder="Password"
+                    required
+                    ngModel 
+                    name="password"
+                    >
+                    <button class="btn btn-outline-dark hide-shown-btn" type="button">
+                        <mat-icon 
+                        style="font-size: 25px;" 
+                        *ngIf="showPassword" 
+                        (click)="passwordToggle()">visibility_off
+                        </mat-icon>
+                        <mat-icon 
+                        style="font-size: 25px;" 
+                        *ngIf="!showPassword"
+                        (click)="passwordToggle()">visibility
+                        </mat-icon>
+                    </button>
+                </div>
+                <div class="col-12-sm mt-3 mb-2 form-group" style="font-weight: 500;">
+                    <label class="me-5">
+                        <input 
+                        class="form-check-input" 
+                        type="checkbox"> 
+                        Remember Me
+                    </label>
+                    <a class="ms-4" href="#">Forgot Password?</a>
+                </div>
+                <div class="col-12-sm mt-4 d-flex align-items-center justify-content-center">
+                    <button class="btn btn-dark loginButton me-4" 
+                    type="submit" 
+                    >Login</button>
+                    <button class="btn btn-dark loginButton ms-4" 
+                    type="submit"
+                    routerLink="/" 
+                    >Continue without login</button>
+                </div>
+                <div class="col-12-sm mt-4" style="font-weight: 500;">
+                    <p class="mb-0">Don`t have an account?<a routerLink="/register"> Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

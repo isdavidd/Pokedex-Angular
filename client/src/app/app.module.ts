@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -11,16 +12,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { LoginAndRegisterComponent } from './pages/login-register/login-register.component';
-import { LoginComponent } from './pages/login-register/components/login-component.ts/login-component';
-import { RegisterComponent } from './pages/login-register/components/register-component.ts/register-component';
+import { LoginComponent } from './pages/login/login-component';
+import { RegisterComponent } from './pages/register/register-component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContactComponent } from './pages/contacts/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 
@@ -29,11 +29,11 @@ import { ContactComponent } from './pages/contacts/contact/contact.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginAndRegisterComponent,
     LoginComponent,
     RegisterComponent,
     ContactsComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +48,7 @@ import { ContactComponent } from './pages/contacts/contact/contact.component';
     ReactiveFormsModule,
     MatSelectModule,
     FontAwesomeModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

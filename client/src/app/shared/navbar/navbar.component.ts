@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MatMenuModule, MatMenuItem  } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
