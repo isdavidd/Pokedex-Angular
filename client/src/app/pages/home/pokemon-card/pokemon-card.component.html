@@ -1,1 +1,11 @@
-<p>pokemon-card works!</p>
+<div class="pokemon-card mb-5" [ngClass]="pokemon.status.types[0].type.name" *ngIf="pokemon.status">
+    <div class="row" style="justify-content: center;">
+        <img 
+        class="col-12-sm img-fluid" 
+        [src]="pokemon.status.sprites.other.dream_world.front_default" 
+        style="width: 12rem; height: 12rem;">
+        <div class="col-12-sm d-flex justify-content-center">
+            <h2>{{pokemon.status.name | titlecase}}</h2>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,15 @@
-<app-pokemon-card></app-pokemon-card>
+<app-navbar (emmitSearch)="getSearch($event)"></app-navbar>
+<div class="container" style="margin-top: 250px;">
+    <div class="row">
+        <app-pokemon-card class="col-sm-3 d-flex justify-content-center" *ngFor="let p of getAllPokemons" [pokemon]="p"></app-pokemon-card>
+    </div>
+    <div class="col-sm-12 d-flex justify-content-center">
+        <ngb-pagination
+        [collectionSize]="100"
+        [(page)]="currentPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        ></ngb-pagination>
+    </div>
+</div>

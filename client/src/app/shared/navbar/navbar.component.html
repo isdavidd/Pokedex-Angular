@@ -12,7 +12,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="/">
       <img class="me-3" width="60" src="../../../assets/Poke_Ball_icon.png" alt="" />
     </a>
     <div
@@ -40,19 +40,22 @@
           </a>
         </li>
       </ul>
-      <form class="nav-item d-flex ms-1 mb-1" role="search">
+      <form class="nav-item d-flex ms-1 mb-2" role="search">
         <input
           class="form-control me-2"
-          type="search"
+          type="text"
           placeholder="Search Pokemon"
           aria-label="Search"
+          #searchBar
+          name="search"
+          (keyup)="search(searchBar.value)"
         />
         <!-- <button class="btn navbarButton" type="submit">
           <mat-icon>search</mat-icon>
           Search
         </button> -->
       </form>
-      <div ngbDropdown class="nav-item d-inline-flex ms-1 me-1 btn-group">
+      <div ngbDropdown class="nav-item d-inline-flex ms-1 me-1 mt-1 btn-group">
         <button ngbDropdownToggle class="btn navbarButton" id="dropdownProfile">
           <mat-icon class="me-1">account_circle</mat-icon>
           <span class="navbar-text">
