@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
-import { PokemonService } from '../services/pokemon-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -12,27 +12,23 @@ export class NavbarComponent implements OnInit{
   @Output() public emmitSearch: EventEmitter<string> = new EventEmitter();
 
   isCollapsed = true;
-  pokemonName!: string;
-  searchh!: string;
-  searchResults: any[] = [];
   userName: string = "Veliok";
 
-  constructor(private pokemonService: PokemonService) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     
   }
 
   ngOnInit() {
-    
+
+  }
+
+  isNotHomePage (): boolean{
+    return this.router.url === ('/contacts' || '/login' || '/register')
   }
 
   search(value: string){
     this.emmitSearch.emit(value);
   }
-
-  searchPokemonName () {
-    
-  }
-
 
 
 }

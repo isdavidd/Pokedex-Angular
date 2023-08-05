@@ -40,7 +40,7 @@
           </a>
         </li>
       </ul>
-      <form class="nav-item d-flex ms-1 mb-2" role="search">
+      <form class="nav-item d-flex ms-1 mb-1" role="search" *ngIf="!isNotHomePage()">
         <input
           class="form-control me-2"
           type="text"
@@ -55,7 +55,7 @@
           Search
         </button> -->
       </form>
-      <div ngbDropdown class="nav-item d-inline-flex ms-1 me-1 mt-1 btn-group">
+      <div ngbDropdown class="nav-item d-inline-flex ms-1 me-1 mt-1 mb-1 btn-group">
         <button ngbDropdownToggle class="btn navbarButton" id="dropdownProfile">
           <mat-icon class="me-1">account_circle</mat-icon>
           <span class="navbar-text">
