@@ -14,7 +14,7 @@ export class PokemonService {
   }
 
   listAllPokemons(): Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}?offset=${0}&limit=${151}`).pipe(
+    return this.http.get<any>(`${this.baseUrl}?offset=${0}&limit=${520}`).pipe(
       tap(res => res),
       tap (res => { 
         res.results.map((pokemons: any) => {

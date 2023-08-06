@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit{
     this.pokemonService.listAllPokemons().subscribe(
       res => {
         this.setAllPokemons = res.results;
+        this.totalItems = this.setAllPokemons.length;
+        console.log(this.totalItems)
         // this.getAllPokemons = this.setAllPokemons;
         // this.totalItems = this.getAllPokemons.length;
         // console.log(this.setAllPokemons);
@@ -35,8 +37,9 @@ export class HomeComponent implements OnInit{
     this.pokemonService.listPageOfPokemons(this.currentPage, this.pageSize).subscribe(
       res => {
         this.getAllPokemons = res.results;
-        this.totalItems = this.getAllPokemons.length;
+        // this.totalItems = this.getAllPokemons.length;
         console.log(this.setAllPokemons);
+        // console.log(this.totalItems)
 
       }
     );
