@@ -17,9 +17,9 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 export class ContactComponent implements OnInit {
   @Input() cria!: Cria;
 
-  githubAnimationValue: AnimationProp = 'none';
-  linkedinAnimationValue: AnimationProp = 'none';
-  emailAnimationValue: AnimationProp = 'none';
+  githubAnimationValue: AnimationProp | undefined = undefined ;
+  linkedinAnimationValue: AnimationProp | undefined = undefined;
+  emailAnimationValue: AnimationProp | undefined = undefined;
 
   faEnvelope = faEnvelope;
   faGithub = faGithub;
@@ -38,9 +38,9 @@ export class ContactComponent implements OnInit {
   }
 
   onMouseLeave (icon: FaIconComponent, title: string) {
-    title == 'github' ? this.githubAnimationValue = 'none'
-    : title == 'linkedin' ? this.linkedinAnimationValue = 'none'
-    : this.emailAnimationValue = 'none';
+    title == 'github' ? this.githubAnimationValue = undefined
+    : title == 'linkedin' ? this.linkedinAnimationValue = undefined
+    : this.emailAnimationValue = undefined;
   }
 
   ngOnInit () {
