@@ -2,7 +2,7 @@
     margin: 0;
     border-radius: 15px;
     width: 18rem;
-    height: 21rem;
+    height: 23rem;
 }
 
 div > h2 {
@@ -15,7 +15,14 @@ div > h5 {
     color: #fffffff3;
 }
 
-div > button {
+div > .btn-dark {
     width: fit-content;
 }
-  
+
+.pokemon-type-badge {
+    color: #fffffff3;
+    width: fit-content;
+    padding: 8px;
+    border-radius: 15px;
+    filter: brightness(1.2);
+}

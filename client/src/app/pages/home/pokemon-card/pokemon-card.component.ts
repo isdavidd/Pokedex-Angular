@@ -10,7 +10,6 @@ import { PokemonService } from 'src/app/shared/services/pokemon-service.service'
 export class PokemonCardComponent implements OnInit{
   @Input() pokemon: any;
 
-
   constructor(private pokemonService: PokemonService) {
 
   }

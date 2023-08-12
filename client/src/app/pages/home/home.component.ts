@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit{
   setAllPokemons: any;
   currentPage = 1;
   pageSize = 52;
+  totalPages!: number;
   totalItems!: number;
   pokemons: any[] = [];
 
@@ -23,26 +24,41 @@ export class HomeComponent implements OnInit{
       res => {
         this.setAllPokemons = res.results;
         this.totalItems = this.setAllPokemons.length;
-        console.log(this.totalItems)
+        this.totalPages = Math.ceil((this.totalItems/this.pageSize));
+        console.log(this.totalPages);
+        console.log(this.totalItems);
+      }
+      );
+    //     console.log(this.totalItems)
         // this.getAllPokemons = this.setAllPokemons;
         // this.totalItems = this.getAllPokemons.length;
         // console.log(this.setAllPokemons);
 
-      }
-    );
+      // }
+    // );
     this.listPage();
   }
 
   listPage() {
+    if (this.currentPage == this.totalPages) {
+      const remainingPokemons = this.totalItems - ((this.currentPage - 1) * this.pageSize);
+      this.pokemonService.listLastPageOfPokemons(this.currentPage, this.pageSize, remainingPokemons).subscribe(
+        res => {
+          this.getAllPokemons = res.results;
+          console.log(this.setAllPokemons);
+        }
+      );
+    }
+    else {
     this.pokemonService.listPageOfPokemons(this.currentPage, this.pageSize).subscribe(
       res => {
         this.getAllPokemons = res.results;
         // this.totalItems = this.getAllPokemons.length;
         console.log(this.setAllPokemons);
         // console.log(this.totalItems)
-
       }
     );
+    }
   } 
 
   getSearch(value: string) {
@@ -50,6 +66,10 @@ export class HomeComponent implements OnInit{
       return !res.name.indexOf(value.toLowerCase());
     })
     this.getAllPokemons = filter;
+    if (value === '' || value === ' ') {
+      this.listPage();
+    }
+
   }
 
   onPageChange(page: number): void {

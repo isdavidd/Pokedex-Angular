@@ -14,7 +14,7 @@ export class PokemonService {
   }
 
   listAllPokemons(): Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}?offset=${0}&limit=${520}`).pipe(
+    return this.http.get<any>(`${this.baseUrl}?offset=${0}&limit=${600}`).pipe(
       tap(res => res),
       tap (res => { 
         res.results.map((pokemons: any) => {
@@ -34,10 +34,26 @@ export class PokemonService {
     )
   }
 
-  listPageOfPokemons(page: number, pageSize: number) {
+  listPageOfPokemons(page: number, pageSize: number): Observable<any> {
     const offset = (page - 1) * pageSize;
-    const url = `${this.baseUrl}?offset=${offset}&limit=${pageSize}`;
+    const url = `${this.baseUrl}?offset=${offset}&limit=${pageSize}`; 
+    
+    return this.http.get<any>(url).pipe(
+      tap(res => res),
+      tap (res => { 
+        res.results.map((pokemons: any) => {
+          this.getAllPokemons(pokemons.url).subscribe(
+            res => pokemons.status = res
+          );
+        })
+       })
+    );
+  }
 
+  listLastPageOfPokemons(page: number, pageSize: number, remainingPokemons: number): Observable<any> {
+    const offset = (page - 1) * pageSize;
+    const url = `${this.baseUrl}?offset=${offset}&limit=${remainingPokemons}`; 
+    
     return this.http.get<any>(url).pipe(
       tap(res => res),
       tap (res => { 
