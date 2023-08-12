@@ -11,8 +11,21 @@
         <div class="col-4 d-flex justify-content-evenly" *ngFor="let t of pokemon.status.types" >
             <div class="pokemon-type-badge" [ngClass]="[t.type.name]">{{ t.type.name }}</div>
         </div>
-        <div class="col-12 mt-4 d-flex justify-content-center">
+        <div class="col-12 mt-4 d-flex justify-content-evenly">
             <button class="btn btn-dark" (click)="openModal(content)">Details</button>
+            <button 
+            class="btn favoriteButton"
+            (click)="onFavoritePokemon()">
+                <mat-icon 
+                class="me-1"
+                *ngIf="notFavorited">
+                favorite_border
+                </mat-icon>
+                <mat-icon 
+                class="me-1"
+                *ngIf="!notFavorited">
+                favorite</mat-icon>
+            </button>
         </div>
     </div>
 </div>
@@ -97,9 +110,22 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-        </div> -->
+        <div class="modal-footer">
+            <button 
+            class="btn favoriteButton"
+            (click)="onFavoritePokemon()">
+                <mat-icon 
+                class="me-1"
+                *ngIf="notFavorited">
+                favorite_border
+                </mat-icon>
+                <mat-icon 
+                class="me-1"
+                *ngIf="!notFavorited">
+                favorite
+            </mat-icon>
+            </button>
+        </div>
     </div>
 </ng-template>
 

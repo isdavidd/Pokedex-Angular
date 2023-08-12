@@ -11,6 +11,7 @@ export class PokemonCardComponent implements OnInit{
   @Input() pokemon: any;
   progressBarHeight: string = "25px"
   maxValue: number = 255;
+  notFavorited: boolean = true;
 
   constructor(private modalService: NgbModal) {
 
@@ -24,4 +25,15 @@ export class PokemonCardComponent implements OnInit{
 		this.modalService.open(content, { size: 'lg' });
 	}
 
+  onFavoritePokemon() {
+    this.notFavorited =! this.notFavorited;
+
+    if (!this.notFavorited) {
+      alert(`${this.pokemon.status.name} added to favorites list!`);
+    }
+
+    else 
+    alert(`${this.pokemon.status.name} was removed from favorites list!`);
+  
+  }
 }
