@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { PokemonService } from 'src/app/shared/services/pokemon-service.service';
+import { NgbModal, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -9,13 +9,19 @@ import { PokemonService } from 'src/app/shared/services/pokemon-service.service'
 })
 export class PokemonCardComponent implements OnInit{
   @Input() pokemon: any;
+  progressBarHeight: string = "25px"
+  maxValue: number = 255;
 
-  constructor(private pokemonService: PokemonService) {
+  constructor(private modalService: NgbModal) {
 
   }
 
   ngOnInit(): void {
     
   }
+
+  openModal(content: any) {
+		this.modalService.open(content, { size: 'lg' });
+	}
 
 }

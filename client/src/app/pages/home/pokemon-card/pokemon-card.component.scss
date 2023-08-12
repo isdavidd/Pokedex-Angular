@@ -20,9 +20,39 @@ div > .btn-dark {
 }
 
 .pokemon-type-badge {
-    color: #fffffff3;
-    width: fit-content;
+    color: #ffffff;
+    width: 80px;
     padding: 8px;
     border-radius: 15px;
-    filter: brightness(1.2);
+    filter: brightness(1.1);
+    text-align: center;
+}
+
+/* Modal Styles */
+
+.modal-content{
+    background-color: #292b2c;
+    color: #fffffff3;
+}
+
+
+.btn-close {
+    background-color: #fffffff3;
+    color: #fffffff3;
+}
+
+.pokemon-type-badge-modal {
+    color: #fffffff3;
+    width: 100px;
+    padding: 8px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+div > span {
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    margin-bottom: 25px;
+    margin-top: 25px
 }

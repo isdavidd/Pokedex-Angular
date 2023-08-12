@@ -5,14 +5,102 @@
         [src]="pokemon.status.sprites.other.dream_world.front_default" 
         style="width: 12rem; height: 12rem;">
         <div class="col-12-sm d-flex justify-content-center">
-            <h2>{{pokemon.status.name | titlecase}}</h2>
-            <h5 class="ms-4 mt-2"># {{pokemon.status.id}}</h5>
+            <h2>{{ pokemon.status.name | titlecase }}</h2>
+            <h5 class="ms-4 mt-2">#{{ pokemon.status.id }}</h5>
         </div>
         <div class="col-4 d-flex justify-content-evenly" *ngFor="let t of pokemon.status.types" >
-            <div class="pokemon-type-badge" [ngClass]="[t.type.name]">{{t.type.name}}</div>
+            <div class="pokemon-type-badge" [ngClass]="[t.type.name]">{{ t.type.name }}</div>
         </div>
         <div class="col-12 mt-4 d-flex justify-content-center">
-            <button class="btn btn-dark">Details</button>
+            <button class="btn btn-dark" (click)="openModal(content)">Details</button>
         </div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">{{ pokemon.status.name | titlecase }} #{{ pokemon.status.id }}</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body p-0 mb-3">
+            <div class="container">
+                <div class="row">
+                    <div 
+                    class="col-12-sm d-flex justify-content-center" 
+                    [ngClass]="pokemon.status.types[0].type.name" 
+                    style="width: 100%; border-radius: 25px;">
+                        <img class="img-fluid"
+                        [src]="pokemon.status.sprites.other.dream_world.front_default"
+                        style="width: 300px; height: 300px;">
+                    </div>
+                    <div class="d-flex justify-content-evenly mt-4" 
+                    *ngFor="let t of pokemon.status.types" 
+                    [ngClass]="pokemon.status.types.length >= 2 ? 'col-6' : 'col-12'">
+                        <div class="pokemon-type-badge-modal" [ngClass]="[t.type.name]">{{ t.type.name }}</div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-around">
+                        <span>{{(pokemon.status.weight/10).toFixed(1)}} KG <br> Weight</span>
+                        <span>{{(pokemon.status.height/10).toFixed(1)}} M <br> Height</span>
+                    </div>
+                    <div class="row d-flex justify-content-center ms-1">
+                        <h3 class="col-12 d-flex justify-content-center">Base Stats</h3>
+                        <label class="col-1 me-1" for="pokeHP">HP</label>
+                        <p class="col-11">
+                            <ngb-progressbar
+                            style="border-radius: 15px;"
+                            ariaLabel="pokeHP" 
+                            type="danger" 
+                            [value]="pokemon.status.stats[0].base_stat"
+                            [height]="progressBarHeight"
+                            [max]="maxValue"
+                            > {{pokemon.status.stats[0].base_stat}}/{{maxValue}}
+                            </ngb-progressbar>
+                        </p>
+                        <label class="col-1 me-2" for="pokeATK">ATK</label>
+                        <p class="col-11">
+                            <ngb-progressbar
+                            style="border-radius: 15px;"
+                            ariaLabel="pokeATK" 
+                            type="warning" 
+                            [value]="pokemon.status.stats[1].base_stat"
+                            [height]="progressBarHeight"
+                            [max]="maxValue"
+                            > {{pokemon.status.stats[1].base_stat}}/{{maxValue}}
+                            </ngb-progressbar>
+                        </p>
+                        <label class="col-1 me-2" for="pokeDEF">DEF</label>
+                        <p class="col-11">
+                            <ngb-progressbar
+                            style="border-radius: 15px;"
+                            ariaLabel="pokeDEF" 
+                            type="primary" 
+                            [value]="pokemon.status.stats[2].base_stat"
+                            [height]="progressBarHeight"
+                            [max]="maxValue"
+                            > {{pokemon.status.stats[2].base_stat}}/{{maxValue}}
+                            </ngb-progressbar>
+                        </p>
+                        <label class="col-1 me-2" for="pokeSPD">SPD</label>
+                        <p class="col-11">
+                            <ngb-progressbar
+                            style="border-radius: 15px;"
+                            ariaLabel="pokeSPD" 
+                            type="success" 
+                            [value]="pokemon.status.stats[5].base_stat"
+                            [height]="progressBarHeight"
+                            [max]="maxValue"
+                            > {{pokemon.status.stats[5].base_stat}}/{{maxValue}}
+                            </ngb-progressbar>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div> -->
+    </div>
+</ng-template>
+
+
